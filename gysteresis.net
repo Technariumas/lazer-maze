@@ -1,0 +1,13 @@
+* Z:\home\miceuz\Xaltura\laser-maze\gysteresis.asc
+XU1 N004 N002 N001 0 N003 LM339
+R1 N004 0 24k
+R2 P001 N004 76k
+V1 N001 0 5
+V2 N002 0 SINE(0.2 0.03 1)
+R3 N001 N003 10k
+R4 N003 N004 5000k
+R5 N001 P001 512k
+.tran 3
+.lib LM339.sub
+.backanno
+.end
