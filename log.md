@@ -34,4 +34,8 @@ We expected to use a cheap ebay 433MHz transmitter/receiver pair for radio commu
 
 #Lasers
 
-We have decided to use green laser pointers as a laser module source as it was the cheapest option. During member day event in the Technarium hackerspace we took some time to peel the aluminium case off the modules - some mental echo of ancient people sitting around the fire and peeling fruits. Modules proved to be of several kinds physically, but all of them used the same constant current driver circuit.  
+We have decided to use green laser pointers as a laser module source as it was the cheapest option. 
+
+![](pics/s-l400.jpg)
+
+During the member day meetup event in the Technarium hackerspace we took some time to peel the aluminium case off the modules - some mental echo of ancient people sitting around the fire and peeling fruits. Modules proved to be of several kinds physically, but all of them used the same constant current driver circuit.
