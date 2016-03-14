@@ -8,6 +8,7 @@ Design a "laser maze" type system composed out of 20 laser/detector pairs
 * Wireless at 433MHz;
 * Latency up to 5ms;
 * Vibration tolerant sensor;
+* Portable, easily reconfigurable
 
 #Sensor design
 
@@ -27,7 +28,11 @@ Soon we have realised that a single photo-transistor won't work. So we have move
 
 This grid gave us pretty even signal over the whole are of the sensor, difference between illuminated and non illuminated reading being ~100mV using red pointer laser.
 
-As ambient light influences the idle level of the sensor a lot, we needed a means to perform calibration. We decided to use a digital potentiometer for that.
+As ambient light influences the idle level of the sensor a lot, we needed means to perform a calibration. We have decided to use a digital potentiometer for that. This is how the first revision of detector circuit looked like:
+
+![](pics/comparator1.png)
+
+P3 is a connector for the photo-transistor matrix, R5 is a photo-transistor load resistor, U2B is the comparator that compares the detector matrix output to a value set by U3 and R4. U3 is a 100k digital potentiometer, allowing to set a reference voltage form 0V to 0.540V in 128 steps, one step being 4mV. R3 adds about 10mV of hysteresis.
 
 #Radio
 We expected to use a cheap ebay 433MHz transmitter/receiver pair for radio communication, but at the first test it proved to be insufficient. The communication was unreliable and too slow at 4800 baud rate. So we decided to test RFM01/RFM02 pair by Hope electronics.
