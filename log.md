@@ -55,4 +55,4 @@ The laser modules have a simple constant current regulator attached to them. The
 We have hooked up an external potentiometer instead of reference divider and performed some experiments. Lasing action starts around 130mA. The beam gets brighter while increasing the current up to 220mA, then stays fairly constant up to 310mA and then starts increasing again. The maximum we have tried was 350mA. The module was not overheating, so probably current can be increased more, but it's not clear where critical overcurrent point is for the particular laser diode. Diode characteristics drift a lot with temperature so it's not clever to run it on very high current without having feedback from the actual light output intensity. Flat region 220-310mA is interesting though - it might be a good idea to run in the middle of this region. 
 
 #Case design
-![case design no 1](pics/case1.jpg)
+![case design no 1](pics/case1.png)
