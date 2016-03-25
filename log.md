@@ -31,7 +31,7 @@ This grid gave us pretty even signal over the whole are of the sensor, differenc
 
 As ambient light influences the idle level of the sensor a lot, we needed means to perform a calibration. We have decided to use a digital potentiometer for that. This is how the first revision of detector circuit looked like:
 
-![](pics/comparator1.png)
+![comparator](pics/comparator1.png)
 
 P3 is a connector for the photo-transistor matrix, R5 is a photo-transistor load resistor, U2B is the comparator that compares the detector matrix output to a value set by U3 and R4. U3 is a 100k digital potentiometer, allowing to set a reference voltage form 0V to 0.540V in 128 steps, one step being 4mV. R3 adds about 10mV of hysteresis.
 
@@ -42,17 +42,24 @@ The original idea was to have lasers as dumb always-on battery+laser assemblies,
 
 So, to have a two-directional communication possibility we have decided to test RFM69W modules - there's plenty of example code floating around on the net so we wouldn't have to reinvent the wheel. The test turned out to be ok, we were able to get reliable communication across the room and the latency was 3.16ms.
 
+![radio latency](pics/radio-latency.png)
+
 #Lasers
 
 We have decided to use green laser pointers as a laser module source as it was the cheapest option. 
 
-![](pics/s-l400.jpg)
+![lasers](pics/s-l400.jpg)
 
 During the member day meetup event in the Technarium hackerspace we took some time to peel the aluminium case off the modules - some mental echo of ancient people sitting around the fire and peeling fruits. Modules proved to be of several kinds physically, but all of them used the same constant current driver circuit.
 
+![laser module](pics/laser-module.png)
+
 The laser modules have a simple constant current regulator attached to them. The pass transistor is controlled by the op-amp in such a way that voltage across the shunt resistor is equal to a voltage specified by the resistive divider reference for which is provided by 2.5V zener diode. Modules run at 330mA.
+
+![laser driver schematics](pics/laser-driver-schematics.png)
 
 We have hooked up an external potentiometer instead of reference divider and performed some experiments. Lasing action starts around 130mA. The beam gets brighter while increasing the current up to 220mA, then stays fairly constant up to 310mA and then starts increasing again. The maximum we have tried was 350mA. The module was not overheating, so probably current can be increased more, but it's not clear where critical overcurrent point is for the particular laser diode. Diode characteristics drift a lot with temperature so it's not clever to run it on very high current without having feedback from the actual light output intensity. Flat region 220-310mA is interesting though - it might be a good idea to run in the middle of this region. 
 
 #Case design
 ![case design no 1](pics/case1.png)
+![case design no 2](pics/case2.png)
