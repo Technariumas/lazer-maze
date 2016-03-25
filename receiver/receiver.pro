@@ -1,4 +1,4 @@
-update=Sat 05 Mar 2016 10:08:52 AM EET
+update=Fri 25 Mar 2016 04:25:44 PM EET
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=receiver-cache
+LibName31=mysensors_radios
