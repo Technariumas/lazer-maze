@@ -63,3 +63,5 @@ We have hooked up an external potentiometer instead of reference divider and per
 #Case design
 ![case design no 1](pics/case1.png)
 ![case design no 2](pics/case2.png)
+<script src="https://embed.github.com/view/3d/Technariumas/lazer-maze
+/master/pics/case2.stl"></script>
