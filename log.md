@@ -40,7 +40,7 @@ We expected to use a cheap ebay 433MHz transmitter/receiver pair for radio commu
 
 The original idea was to have lasers as dumb always-on battery+laser assemblies, but after some thought we've decided that it would be a good thing to have means to switch off lasers too - it would prevent them from overheating, extend their life and create a possibility to play cool effects by switching and PWMing them. Thus, to keep price down we have decided to join the laser and sensor together in a single assembly, guiltying a bit against the the total wireless idea we had in the beginning by using a relatively short cable from the laser module to the main sensor/MCU board.
 
-So, to have a two-directional communication possibility we have decided to test RFM69W modules - there's plenty of example code floating around on the net so we wouldn't have to reinvent the wheel.
+So, to have a two-directional communication possibility we have decided to test RFM69W modules - there's plenty of example code floating around on the net so we wouldn't have to reinvent the wheel. The test turned out to be ok, we were able to get reliable communication across the room and the latency was 3.16ms.
 
 #Lasers
 
