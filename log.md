@@ -35,6 +35,8 @@ As ambient light influences the idle level of the sensor a lot, we needed means 
 
 P3 is a connector for the photo-transistor matrix, R5 is a photo-transistor load resistor, U2B is the comparator that compares the detector matrix output to a value set by U3 and R4. U3 is a 100k digital potentiometer, allowing to set a reference voltage form 0V to 0.540V in 128 steps, one step being 4mV. R3 adds about 10mV of hysteresis.
 
+![pcb render](pics/pcb-render.png)
+
 #Radio
 We expected to use a cheap ebay 433MHz transmitter/receiver pair for radio communication, but at the first test it proved to be insufficient. The communication was unreliable and too slow at 4800 baud rate. So we decided to test RFM01/RFM02 pair by Hope electronics. 
 
@@ -63,3 +65,4 @@ We have hooked up an external potentiometer instead of reference divider and per
 #Case design
 ![case design no 1](pics/case1.png)
 ![case design no 2](pics/case2.png)
+![case design no 2](pics/case2-print.png)
