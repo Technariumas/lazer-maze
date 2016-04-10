@@ -1000,11 +1000,9 @@ RADIO_SELECT
 Wire Wire Line
 	5300 1500 5300 3350
 Wire Wire Line
-	3150 3150 4250 3150
-Wire Wire Line
-	4250 3150 4250 6700
+	4250 6700 4250 3550
 Connection ~ 4250 6700
-Text Label 3150 3150 0    60   ~ 0
+Text Label 3150 3550 0    60   ~ 0
 LASER_ON
 Wire Wire Line
 	8600 2950 9650 2950
@@ -1041,4 +1039,6 @@ F 6 "1557424 " H 8600 3450 60  0001 C CNN "Distributor"
 $EndComp
 Wire Wire Line
 	7750 2850 3150 2850
+Wire Wire Line
+	4250 3550 3150 3550
 $EndSCHEMATC
