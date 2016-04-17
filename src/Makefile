@@ -12,15 +12,16 @@ F_CPU   = 8000000	# in Hz
 FUSE_L  = 0xC2# see below for fuse values for particular devices
 FUSE_H  = 0xDF
 FUSE_E  = 0xFF
-AVRDUDE = avrdude -c usbasp -P usb -p $(DEVICE) -e # edit this line for your programmer
+AVRDUDE = avrdude -c usbasp -P usb -p $(DEVICE) -e -V
 
-CFLAGS  = -Iusbdrv -I. -DDEBUG_LEVEL=0  -Os 
-CFLAGS += -ffunction-sections -fdata-sections -save-temps 
-LDFLAGS += -Wl,--gc-sections,--relax
+CFLAGS  = -I. -DDEBUG_LEVEL=0  -Os -Wall -g 
+CFLAGS += -fno-exceptions -ffunction-sections -fdata-sections -save-temps 
+LDFLAGS = -Os -Wl,--gc-sections
 
 OBJECTS = main.o SPI.o timer.o RFM69.o
 
-COMPILE = avr-gcc-4.9.2 -DF_CPU=$(F_CPU) $(CFLAGS) $(LDFLAGS) -mmcu=$(DEVICE)  
+COMPILE = avr-g++-4.9.2 -DF_CPU=$(F_CPU) $(CFLAGS) -mmcu=$(DEVICE)
+LINK = avr-g++-4.9.2 $(LDFLAGS) -mmcu=$(DEVICE) $(LDFLAGS)
 
 # symbolic targets:
 help:
@@ -43,7 +44,7 @@ fuse:
 
 # rule for uploading firmware:
 flash: main.hex
-	$(AVRDUDE) -U flash:w:main.hex:i -V -B 15 
+	$(AVRDUDE) -U flash:w:main.hex:i -V #-B 15 
 sflash: main.hex
 	$(AVRDUDE) -U flash:w:main.hex:i -B 10.92 -V
 # rule for deleting dependent files (those which can be built by Make):
@@ -52,10 +53,10 @@ clean:
 
 # Generic rule for compiling C files:
 .c.o:
-	$(COMPILE) -x c++  -c $< -o $@
+	$(COMPILE) -c $< -o $@
 
 .cpp.o:
-	$(COMPILE) -x c++ -c $< -o $@
+	$(COMPILE) -c $< -o $@
 
 # Generic rule for assembling Assembler source files:
 .S.o:
@@ -74,7 +75,7 @@ clean:
 # Since we don't want to ship the driver multipe times, we copy it into this project:
 
 main.elf: $(OBJECTS)	# usbdrv dependency only needed because we copy it
-	$(COMPILE) -L /usr/lib/avr/lib/ldscripts/ -o main.elf $(OBJECTS)
+	$(LINK) -L /usr/lib/avr/lib/ldscripts/ -lm -o main.elf $(OBJECTS) 
 
 main.hex: main.elf
 	rm -f main.hex main.eep.hex

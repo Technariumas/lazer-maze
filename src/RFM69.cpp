@@ -259,6 +259,7 @@ void RFM69::send(uint8_t toAddress, const void* buffer, uint8_t bufferSize, bool
 // The reason for the semi-automaton is that the lib is interrupt driven and
 // requires user action to read the received data and decide what to do with it
 // replies usually take only 5..8ms at 50kbps@915MHz
+/*
 bool RFM69::sendWithRetry(uint8_t toAddress, const void* buffer, uint8_t bufferSize, uint8_t retries, uint8_t retryWaitTime) {
   uint32_t sentTime;
   for (uint8_t i = 0; i <= retries; i++)
@@ -277,6 +278,7 @@ bool RFM69::sendWithRetry(uint8_t toAddress, const void* buffer, uint8_t bufferS
   }
   return false;
 }
+*/
 
 // should be polled immediately after sending a packet with ACK request
 bool RFM69::ACKReceived(uint8_t fromNodeID) {
@@ -292,6 +294,7 @@ bool RFM69::ACKRequested() {
 
 // should be called immediately after reception in case sender wants ACK
 void RFM69::sendACK(const void* buffer, uint8_t bufferSize) {
+/*
   ACK_REQUESTED = 0;   // TWS added to make sure we don't end up in a timing race and infinite loop sending Acks
   uint8_t sender = SENDERID;
   int16_t _RSSI = RSSI; // save payload received RSSI value
@@ -301,6 +304,7 @@ void RFM69::sendACK(const void* buffer, uint8_t bufferSize) {
   SENDERID = sender;    // TWS: Restore SenderID after it gets wiped out by receiveDone()
   sendFrame(sender, buffer, bufferSize, false, true);
   RSSI = _RSSI; // restore payload RSSI
+*/
 }
 
 // internal function
@@ -339,7 +343,7 @@ void RFM69::sendFrame(uint8_t toAddress, const void* buffer, uint8_t bufferSize,
 }
 
 uint8_t RFM69::getInterruptPinStatus() {
-	return (PORTA & _BV(PA0)) == _BV(PA0);
+	return (PINA & _BV(PA0)) == _BV(PA0);
 }
 
 // internal function - interrupt gets called when a packet is received
@@ -474,6 +478,9 @@ void RFM69::writeReg(uint8_t addr, uint8_t value)
 // select the RFM69 transceiver (save SPI settings, set CS low)
 void RFM69::select() {
   cli();
+  DDRA |= _BV(PA4);
+  DDRA |= _BV(PA6);
+
 #if defined (SPCR) && defined (SPSR)
   // save current SPI settings
   _SPCR = SPCR;
@@ -495,6 +502,11 @@ void RFM69::unselect() {
   SPSR = _SPSR;
 #endif
   sei();
+  DDRA &= ~_BV(PA4);
+  DDRA &= ~_BV(PA5);
+  DDRA &= ~_BV(PA6);
+  DDRA &= ~_BV(PA0);
+
 }
 
 // true  = disable filtering to capture all frames on network
@@ -807,10 +819,12 @@ void RFM69::readAllRegs()
 
 uint8_t RFM69::readTemperature(uint8_t calFactor) // returns centigrade
 {
+
   setMode(RF69_MODE_STANDBY);
   writeReg(REG_TEMP1, RF_TEMP1_MEAS_START);
   while ((readReg(REG_TEMP1) & RF_TEMP1_MEAS_RUNNING));
   return ~readReg(REG_TEMP2) + COURSE_TEMP_COEF + calFactor; // 'complement' corrects the slope, rising temp = rising val
+
 } // COURSE_TEMP_COEF puts reading in the ballpark, user can add additional correction
 
 void RFM69::rcCalibration()

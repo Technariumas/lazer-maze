@@ -11,7 +11,6 @@
 #ifndef _SPI_H_INCLUDED
 #define _SPI_H_INCLUDED
 
-#include <stdio.h>
 #include <avr/io.h>
 
 #define LSBFIRST 0
