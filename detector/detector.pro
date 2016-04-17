@@ -58,5 +58,5 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=receiver-cache
+LibName30=detector-cache
 LibName31=mysensors_radios

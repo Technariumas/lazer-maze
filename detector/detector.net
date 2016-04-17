@@ -1,15 +1,15 @@
 (export (version D)
   (design
-    (source /home/miceuz/Xaltura/laser-maze/receiver/receiver.sch)
+    (source /home/miceuz/Xaltura/laser-maze/detector/detector.sch)
     (date "Fri 15 Apr 2016 02:51:47 PM EEST")
     (tool "Eeschema 0.201603210401+6634~43~ubuntu14.04.1-product")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
-        (title "Laser maze receiver")
+        (title "Laser maze detector")
         (company Technarium)
         (rev 1)
         (date 2016-03-25)
-        (source receiver.sch)
+        (source detector.sch)
         (comment (number 1) (value "Albertas Mickėnas"))
         (comment (number 2) (value albertas@technarium.lt))
         (comment (number 3) (value ""))
@@ -166,7 +166,7 @@
     (comp (ref U4)
       (value RFM69HW)
       (footprint mysensors_radios:RFM69HW_SMD_ThroughHole_Handsoldering)
-      (libsource (lib receiver-cache) (part RFM69HW))
+      (libsource (lib detector-cache) (part RFM69HW))
       (sheetpath (names /) (tstamps /))
       (tstamp 56F57ABC))
     (comp (ref Q5)
@@ -556,7 +556,7 @@
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
-    (libpart (lib receiver-cache) (part RFM69HW)
+    (libpart (lib detector-cache) (part RFM69HW)
       (footprints
         (fp RFM69*))
       (fields
@@ -617,8 +617,8 @@
       (uri /usr/local/share/kicad/library/conn.lib))
     (library (logical atmel)
       (uri /usr/local/share/kicad/library/atmel.lib))
-    (library (logical receiver-cache)
-      (uri /home/miceuz/Xaltura/laser-maze/receiver/receiver-cache.lib)))
+    (library (logical detector-cache)
+      (uri /home/miceuz/Xaltura/laser-maze/detector/detector-cache.lib)))
   (nets
     (net (code 1) (name /THRESHOLD)
       (node (ref U2) (pin 6))
