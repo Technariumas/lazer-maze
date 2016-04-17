@@ -1,4 +1,4 @@
-(kicad_pcb (version 4) (host pcbnew 0.201603210401+6634~43~ubuntu14.04.1-product)
+(kicad_pcb (version 4) (host pcbnew 0.201604142043+6691~44~ubuntu14.04.1-product)
 
   (general
     (links 105)
@@ -37,7 +37,7 @@
   )
 
   (setup
-    (last_trace_width 0.5)
+    (last_trace_width 0.3)
     (user_trace_width 0.3)
     (user_trace_width 0.5)
     (user_trace_width 0.8)
@@ -235,9 +235,9 @@
       (net 3 VAA))
     (pad 4 thru_hole oval (at -4.1 0) (size 2.2 3) (drill 1.5) (layers *.Cu *.Mask F.SilkS))
     (pad 5 thru_hole oval (at 4.1 0) (size 2.2 3) (drill 1.5) (layers *.Cu *.Mask F.SilkS))
-    (model /home/miceuz/Xaltura/laser-maze/doc/os102011.wrl
+    (model os102011.wrl
       (at (xyz 0 0 0))
-      (scale (xyz 0.393701 0.393701 0.393701))
+      (scale (xyz 0.3937 0.3937 0.3937))
       (rotate (xyz 180 0 0))
     )
   )
@@ -435,7 +435,7 @@
       (net 2 GND))
     (pad 1 thru_hole circle (at 0 2.54 180) (size 3 3) (drill 1.8) (layers *.Cu *.Mask F.SilkS)
       (net 2 GND))
-    (model /home/miceuz/Xaltura/laser-maze/receiver/KEY54.wrl
+    (model KEY54.wrl
       (at (xyz 0.07000000000000001 0 0))
       (scale (xyz 0.393701 0.393701 0.393701))
       (rotate (xyz -90 0 180))
@@ -459,12 +459,12 @@
       (net 13 +BATT))
     (pad 1 thru_hole circle (at 0 2.54) (size 3 3) (drill 1.8) (layers *.Cu *.Mask F.SilkS)
       (net 13 +BATT))
-    (model /home/miceuz/Xaltura/laser-maze/receiver/KEY54.wrl
+    (model KEY54.wrl
       (at (xyz 0.07000000000000001 0 0))
       (scale (xyz 0.393701 0.393701 0.393701))
       (rotate (xyz -90 0 180))
     )
-    (model /home/miceuz/Xaltura/laser-maze/receiver/18650.wrl
+    (model 18650.wrl
       (at (xyz -0.35 0 0.42))
       (scale (xyz 0.393701 0.393701 0.393701))
       (rotate (xyz 0 0 0))
@@ -1066,7 +1066,7 @@
       (net 12 "Net-(P1-Pad1)"))
     (pad 2 thru_hole circle (at 3.96 0 90) (size 2.9 2.9) (drill 1.78) (layers *.Cu *.Mask F.SilkS)
       (net 3 VAA))
-    (model /home/miceuz/Xaltura/laser-maze/receiver/645002117322.wrl
+    (model 645002117322.wrl
       (at (xyz 0.08 -0.17 0.01))
       (scale (xyz 0.39 0.39 0.39))
       (rotate (xyz -90 0 0))
@@ -1097,7 +1097,7 @@
       (net 13 +BATT))
     (pad 2 thru_hole circle (at 3.96 0 270) (size 2.9 2.9) (drill 1.78) (layers *.Cu *.Mask F.SilkS)
       (net 2 GND))
-    (model /home/miceuz/Xaltura/laser-maze/receiver/645002117322.wrl
+    (model 645002117322.wrl
       (at (xyz 0.08 -0.17 0.01))
       (scale (xyz 0.39 0.39 0.39))
       (rotate (xyz -90 0 0))
