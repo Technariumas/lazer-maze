@@ -35,6 +35,19 @@ As ambient light influences the idle level of the sensor a lot, we needed means 
 
 P3 is a connector for the photo-transistor matrix, R5 is a photo-transistor load resistor, U2B is the comparator that compares the detector matrix output to a value set by U3 and R4. U3 is a 100k digital potentiometer, allowing to set a reference voltage form 0V to 0.540V in 128 steps, one step being 4mV. R3 adds about 10mV of hysteresis.
 
+Initially we used MICREL MIC5504 LDO voltage regulator, but it's load regulation proved to be inferior. This is what 3.3V rail looks like when the radio starts transmission:
+
+![MIC5504 load regulation](pics/micrel-load-regulation.png)
+
+Blue trace is regulated 3.3V voltage rail, yellow trace is a phototransistor signal. 
+
+TPS79333 from Texas Instruments performed much better:
+![TI TPS79333 load regulation](pics/ti-load-regulation.png)
+
+NCP700 from ON Semiconductor was a little worse than TI chip.
+![ON semi NCP700 load regulation](pics/on-load-regulation.png)
+
+
 ![pcb render](pics/pcb-render.png)
 
 #Radio
