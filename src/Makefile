@@ -10,7 +10,7 @@
 DEVICE  = attiny441
 F_CPU   = 8000000	# in Hz
 FUSE_L  = 0xC2# see below for fuse values for particular devices
-FUSE_H  = 0xDF
+FUSE_H  = 0xD7
 FUSE_E  = 0xFF
 AVRDUDE = avrdude -c usbasp -P usb -p $(DEVICE) -e -V
 
