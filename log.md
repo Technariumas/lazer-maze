@@ -83,7 +83,12 @@ We have hooked up an external potentiometer instead of reference divider and per
 
 As laser modules are reclaimed from a dubious source, they are probably some kind of production rejects as prices for the same modules are much much higher on ebay. As the driving circuit does not have an optical feedback, modules proved to be unstable with temperature - they would become dimm upon heating up. To mitigate the overall shonkiness of modules we have designed a huge heatsink for them.
 
-![laser driver schematics](pics/laser-heatsinks.png)
+![laser heatsink](pics/laser-heatsinks.png)
+
+Air tubes and camera clamps were used to fix the lasers.
+![laser heatsink](pics/DSC02571.png)
+
+![laser heatsink](pics/laser-in-action.png)
 
 #Case design
 ![case design no 1](pics/case1.png)
