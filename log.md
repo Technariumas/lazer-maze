@@ -50,6 +50,12 @@ NCP700 from ON Semiconductor was a little worse than TI chip.
 
 ![pcb render](pics/pcb-render.png)
 
+![pcb back](pics/DSC02542.png)
+
+![pcb front](pics/DSC02543.png)
+
+![pcb lot](pics/DSC02541.png)
+
 #Radio
 We expected to use a cheap ebay 433MHz transmitter/receiver pair for radio communication, but at the first test it proved to be insufficient. The communication was unreliable and too slow at 4800 baud rate. So we decided to test RFM01/RFM02 pair by Hope electronics. 
 
