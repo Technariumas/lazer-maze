@@ -75,6 +75,10 @@ The laser modules have a simple constant current regulator attached to them. The
 
 We have hooked up an external potentiometer instead of reference divider and performed some experiments. Lasing action starts around 130mA. The beam gets brighter while increasing the current up to 220mA, then stays fairly constant up to 310mA and then starts increasing again. The maximum we have tried was 350mA. The module was not overheating, so probably current can be increased more, but it's not clear where critical overcurrent point is for the particular laser diode. Diode characteristics drift a lot with temperature so it's not clever to run it on very high current without having feedback from the actual light output intensity. Flat region 220-310mA is interesting though - it might be a good idea to run in the middle of this region. 
 
+As laser modules are reclaimed from a dubious source, they are probably some kind of production rejects as prices for the same modules are much much higher on ebay. As the driving circuit does not have an optical feedback, modules proved to be unstable with temperature - they would become dimm upon heating up. To mitigate the overall shonkiness of modules we have designed a huge heatsink for them.
+
+![laser driver schematics](pics/laser-heatsinks.png)
+
 #Case design
 ![case design no 1](pics/case1.png)
 ![case design no 2](pics/case2.png)
