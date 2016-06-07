@@ -94,3 +94,5 @@ Air tubes and camera clamps were used to fix the lasers.
 ![case design no 1](pics/case1.png)
 ![case design no 2](pics/case2.png)
 ![case design no 2](pics/case2-print.png)
+![case-stand-fixture](pics/case-stand-fixture.png)
+![case-last-version](pics/case-last-version.png)
