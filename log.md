@@ -91,8 +91,17 @@ Air tubes and camera clamps were used to fix the lasers.
 ![laser heatsink](pics/laser-in-action.png)
 
 #Case design
+Case had to provide means to contain a diffusor and a PCB with a battery. Holes for four screws, two connectors, a switch and a lightpipe had to be designed. We decided to use the same screws to both hold a cover and fix the PCB in place. A plastic ring was used to fix the diffusor. Diffusors were laser cut and engraved from a plexiglass, cases were 3D printed.
+
+The first two case designs.  
 ![case design no 1](pics/case1.png)
 ![case design no 2](pics/case2.png)
+
+The first design that we 3D printed used nuts in slots, this proved to be tedious so we switched to metal threaded inserts for the final version.
+
 ![case design no 2](pics/case2-print.png)
-![case-stand-fixture](pics/case-stand-fixture.png)
 ![case-last-version](pics/case-last-version.png)
+
+In order to attach the detector to a microphone stand we have designed and ordered aluminum adaptors.
+
+![case-stand-fixture](pics/case-stand-fixture.png)
