@@ -142,6 +142,7 @@ static union {
 } packet;
 
 #define MESSAGE_STATUS 0
+#define MESSAGE_LASER_VISIBLE 1
 #define GATEWAY_ADDRESS 254
 
 #define CMD_LASER_ON 1
@@ -153,7 +154,15 @@ void sendStatusPacket() {
 	packet.s.messageId = MESSAGE_STATUS;
 	packet.s.batteryVoltage = getBatteryVoltage();
 	packet.s.calibration = calibration;
-	packet.s.laserTripped = laserTripped;
+	packet.s.laserTripped = (0 != (PINB & _BV(PB1)));
+	radio.send(GATEWAY_ADDRESS, packet.buff, 9);
+}
+
+void sendLaserVisiblePacket() {
+	packet.s.messageId = MESSAGE_LASER_VISIBLE;
+	packet.s.batteryVoltage = getBatteryVoltage();
+	packet.s.calibration = calibration;
+	packet.s.laserTripped = (0 != (PINB & _BV(PB1)));
 	radio.send(GATEWAY_ADDRESS, packet.buff, 9);
 }
 
@@ -203,6 +212,10 @@ int main() {
 			ledOn();
 			sendStatusPacket();
 			delay(10);
+			while((0 == (PINB & _BV(PB1)))){
+				//WAIT
+			}
+			sendLaserVisiblePacket();
 			detectorArm();
 			while(0 == (PINA & _BV(PA3))) {
 				//WAIT
