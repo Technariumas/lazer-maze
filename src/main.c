@@ -54,6 +54,10 @@ inline static void detectorInit() {
 	MCUCR |= _BV(ISC01); //falling edge on INT0
 	GIMSK |= _BV(INT0);
 	digipotSet(0);
+
+	//aux input with pull up
+	DDRA &= ~_BV(PA3);
+	PUEA |= _BV(PA3);
 }
 
 volatile uint8_t laserTripped = 0;
@@ -194,14 +198,28 @@ int main() {
 	laserOn();
 
 	while(1) {
+
 		if(laserTripped) {
 			ledOn();
 			sendStatusPacket();
 			delay(10);
 			detectorArm();
+			while(0 == (PINA & _BV(PA3))) {
+				//WAIT
+			}
 		} else {
 			ledOff();
 		}
+
+		if(laserTripped || 0 == (PINA & _BV(PA3))) {
+			sendStatusPacket();
+			delay(300);
+			while(0 == (PINA & _BV(PA3))) {
+				//WAIT
+			}
+			delay(300);
+		}
+
 
 		if(radio.receiveDone()) {
 			switch((char)radio.DATA[0]) {
