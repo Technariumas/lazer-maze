@@ -1,4 +1,4 @@
-#Requirements
+# Requirements
 
 Design a "laser maze" type system composed out of 20 laser/detector pairs
 
@@ -11,7 +11,7 @@ Design a "laser maze" type system composed out of 20 laser/detector pairs
 * Portable, easily reconfigurable
 * Standard microphone stands should be used as a means to mount and configure lasers and sensors.
 
-#Sensor design
+# Sensor design
 
 To avoid false positives caused by vibration of the sensor or the laser, we decided to use a sensing area of 50mm in diameter. Sensor recepticle was cut out of diffusing plexiglass. We expected that laser light dissipation will be enough for the whole diffusor to glow. 
 
@@ -56,7 +56,7 @@ NCP700 from ON Semiconductor was a little worse than TI chip.
 
 ![pcb lot](pics/DSC02541.png)
 
-#Radio
+# Radio
 We expected to use a cheap ebay 433MHz transmitter/receiver pair for radio communication, but at the first test it proved to be insufficient. The communication was unreliable and too slow at 4800 baud rate. So we decided to test RFM01/RFM02 pair by Hope electronics. 
 
 The original idea was to have lasers as dumb always-on battery+laser assemblies, but after some thought we've decided that it would be a good thing to have means to switch off lasers too - it would prevent them from overheating, extend their life and create a possibility to play cool effects by switching and PWMing them. Thus, to keep price down we have decided to join the laser and sensor together in a single assembly, guiltying a bit against the the total wireless idea we had in the beginning by using a relatively short cable from the laser module to the main sensor/MCU board.
@@ -90,7 +90,7 @@ Air tubes and camera clamps were used to fix the lasers.
 
 ![laser heatsink](pics/laser-in-action.png)
 
-#Case design
+# Case design
 Case had to provide means to contain a diffusor and a PCB with a battery. Holes for four screws, two connectors, a switch and a lightpipe had to be designed. We decided to use the same screws to both hold a cover and fix the PCB in place. A plastic ring was used to fix the diffusor. Diffusors were laser cut and engraved from a plexiglass, cases were 3D printed.
 
 The first two case designs.  
